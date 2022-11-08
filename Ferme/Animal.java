@@ -1,6 +1,6 @@
 package Ferme;
 
-abstract class Animal {
+public abstract class Animal {
 
     private String name;
     public Animal (String name) {
@@ -15,12 +15,20 @@ abstract class Animal {
         this.name = name;
     }
 
+    public String getAnimalName() {
+        return "";
+    }
+
     public String getFamille() {
         return "";
     }
 
     public String getNourriture() {
         return "";
+    }
+
+    public void print() {
+        System.out.printf("Je m'appelle %s", this.name);
     }
 
 

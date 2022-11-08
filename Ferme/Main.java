@@ -6,8 +6,6 @@ public class Main {
 
     public static void main (String[] args) {
 
-        Vache tata = new Vache("tata");
-
         Ferme ferme = new Ferme();
 
         ferme.addAnimal(new Vache("tata"));

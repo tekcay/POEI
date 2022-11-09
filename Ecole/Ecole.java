@@ -46,6 +46,7 @@ public class Ecole {
                 .toList();
     }
 
+
     private List<Eleve> getElevesInClasses(String classe) {
         return this.personnes.stream()
                 .filter(personne -> personne instanceof Eleve)

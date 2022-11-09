@@ -39,6 +39,12 @@ public class Ecole {
         }
     }
 
+    /**
+     *
+     * @param tClass the type of {@code Personne} that must be retrieved, e.g. {@code Eleve}.
+     * @return a {@code List<T>} where {@code T} is an inheritor of {@code Personne}, e.g {@code List<Eleve>}.
+     * @param <T>
+     */
     private <T> List<T> getList(Class<T> tClass) {
             return this.personnes.stream()
                     .filter(personne -> personne.getClass().isAssignableFrom(tClass))
@@ -46,6 +52,11 @@ public class Ecole {
                     .toList();
     }
 
+    /**
+     * Prints the "fiche" of each member of a {@code Personne} type, i.e. inheritor such a {@code Eleve}.
+     * @param tClass the type of {@code Personne} that must be retrieved, e.g. {@code Eleve}
+     * @param <T>
+     */
     public <T> void printType(Class<T> tClass) {
         this.getList(tClass).forEach(t -> ((Personne) t).getFiche());
     }

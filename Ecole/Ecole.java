@@ -6,6 +6,7 @@ import Ecole.Personnes.Salaries.Salarie;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 import java.util.stream.Collector;
 
 public class Ecole {
@@ -31,6 +32,28 @@ public class Ecole {
     public void addSalarie(Salarie salarie) {
         this.personnes.add(salarie);
     }
+
+    public static <T> T convertInstanceOfObject(Object o, Class<T> clazz) {
+        try {
+            return clazz.cast(o);
+        } catch(ClassCastException e) {
+            return null;
+        }
+    }
+
+    private <T> List<T> getList(Class<T> tClass) {
+            return this.personnes.stream()
+                    .filter(personne -> personne.getClass().isAssignableFrom(tClass))
+                    .map(personne -> (T) personne)
+                    .toList();
+    }
+
+    public void printType(String type) {
+        if (type.equals("Eleve")) this.getList(Eleve.class).forEach(Personne::getFiche);
+        if (type.equals("Salarie")) this.getList(Salarie.class).forEach(Personne::getFiche);
+    }
+
+
 
     private List<Salarie> getSalaries() {
         return this.personnes.stream()

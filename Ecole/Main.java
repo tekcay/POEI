@@ -26,8 +26,14 @@ public class Main {
 
          */
 
+        /*
         ecole1.printType("Eleve");
         ecole1.printType("Salarie");
+
+         */
+
+        ecole1.printType(Eleve.class);
+        ecole1.printType(Salarie.class);
 
     }
 

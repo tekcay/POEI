@@ -6,8 +6,6 @@ import Ecole.Personnes.Salaries.Salarie;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collector;
 
 public class Ecole {
 
@@ -48,10 +46,10 @@ public class Ecole {
                     .toList();
     }
 
-    public void printType(String type) {
-        if (type.equals("Eleve")) this.getList(Eleve.class).forEach(Personne::getFiche);
-        if (type.equals("Salarie")) this.getList(Salarie.class).forEach(Personne::getFiche);
+    public <T> void printType(Class<T> tClass) {
+        this.getList(tClass).forEach(t -> ((Personne) t).getFiche());
     }
+
 
 
 

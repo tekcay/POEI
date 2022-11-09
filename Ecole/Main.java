@@ -19,19 +19,6 @@ public class Main {
 
         ecole1.addSalarie(new Salarie("Tonton", 1500));
 
-        /*
-        ecole1.printSalaries();
-        ecole1.printEleves();
-        ecole1.printElevesInClasse("3e");
-
-         */
-
-        /*
-        ecole1.printType("Eleve");
-        ecole1.printType("Salarie");
-
-         */
-
         ecole1.printType(Eleve.class);
         ecole1.printType(Salarie.class);
 

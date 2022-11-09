@@ -10,45 +10,60 @@ import java.util.stream.Collector;
 
 public class Ecole {
 
-    public static ArrayList<Personne> personnes = new ArrayList<>();
+    private ArrayList<Personne> personnes  = new ArrayList<>();
 
-    public Ecole() {
-
+    public Ecole(ArrayList<Personne> personnes) {
+        this.personnes = personnes;
     }
 
+    public void addEleve(String name, String classe) {
+        this.personnes.add(new Eleve(name, classe));
+    }
 
-    private static List<Salarie> getSalaries() {
-        return personnes.stream()
+    public void addEleve(Eleve eleve) {
+        this.personnes.add(eleve);
+    }
+
+    public void addSalarie(String name, int salaire) {
+        this.personnes.add(new Salarie(name, salaire));
+    }
+
+    public void addSalarie(Salarie salarie) {
+        this.personnes.add(salarie);
+    }
+
+    private List<Salarie> getSalaries() {
+        return this.personnes.stream()
                 .filter(personne -> personne instanceof Salarie)
                 .map(personne -> (Salarie)personne)
                 .toList();
     }
 
-    private static List<Eleve> getEleves() {
-        return personnes.stream()
+    private List<Eleve> getEleves() {
+        return this.personnes.stream()
                 .filter(personne -> personne instanceof Eleve)
                 .map(personne -> (Eleve)personne)
                 .toList();
     }
 
-    private static List<Eleve> getElevesInClasses(String classe) {
-        return personnes.stream()
+    private List<Eleve> getElevesInClasses(String classe) {
+        return this.personnes.stream()
                 .filter(personne -> personne instanceof Eleve)
                 .map(personne -> (Eleve)personne)
                 .filter(eleve -> eleve.getClasse().equals(classe))
                 .toList();
     }
 
-    public static void printSalaries() {
-        getSalaries().forEach(Salarie::getFiche);
+    public void printSalaries() {
+        this.getSalaries().forEach(Salarie::getFiche);
     }
 
-    public static void printEleves() {
-        getEleves().forEach(Personne::getFiche);
+    public void printEleves() {
+        this.getEleves().forEach(Personne::getFiche);
     }
 
-    public static void printElevesInClasse(String classe) {
-        getElevesInClasses(classe).forEach(Personne::getFiche);
+    public void printElevesInClasse(String classe) {
+        this.getElevesInClasses(classe).forEach(Personne::getFiche);
     }
 
 

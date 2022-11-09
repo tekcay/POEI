@@ -1,7 +1,5 @@
 package Ecole.Personnes;
 
-import static Ecole.Ecole.personnes;
-
 public class Personne {
 
     private String name;

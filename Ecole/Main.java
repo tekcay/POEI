@@ -20,7 +20,7 @@ public class Main {
         ecole1.addSalarie(new Salarie("Tonton", 1500));
 
         ecole1.printType(Eleve.class);
-        ecole1.printType(Salarie.class); //TODO à faire plus tard
+        ecole1.printType(Salarie.class);
 
     }
 

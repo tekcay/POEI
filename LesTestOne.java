@@ -65,5 +65,8 @@ public class LesTestOne {
 
         if (Atester.isBisextile(2008)) System.out.println("OK");
         else System.out.println("KO");
+
+        if (!Atester.isBisextile(1999)) System.out.println("OK");
+        else System.out.println("KO");
     }    
 }

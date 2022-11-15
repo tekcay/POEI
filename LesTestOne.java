@@ -20,6 +20,10 @@ class Atester {
         }
     }
 
+    static boolean isBisextile(int annee) {
+        return annee % 4 == 0;
+    }
+
 
 
 } 
@@ -58,5 +62,8 @@ public class LesTestOne {
             System.out.println("OK");
         else
             System.out.println("KO");
+
+        if (Atester.isBisextile(2008)) System.out.println("OK");
+        else System.out.println("KO");
     }    
 }
